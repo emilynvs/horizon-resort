@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+:root {
+  --true-cobalt: #202782;
+  --yale-blue: #21416b;
+  --bitter-chocolate: ##732c2c;
+  --royal-gold: #f4d35e;
+  --pale-sky: #c6ddf0;
+  --white: #ffffff;
+}
+
+header {
+  background-color: var(--yale-blue);
+}
+
+header a {
+  color: var(--white) !important;
+}
+
+header .navbar-toggler {
+  background-color: var(--white);
+}
+
+.tophero {
+  background-color: var(--pale-sky) !important;
+}
+
+section {
+  height: 100vh;
+}
