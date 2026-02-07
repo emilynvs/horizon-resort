@@ -46,3 +46,20 @@ header .navbar-toggler {
   box-shadow: 50px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+#monteSeuRoteiroCarousel .carousel-control-prev,
+#monteSeuRoteiroCarousel .carousel-control-next {
+  width: 3rem;
+  height: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+#monteSeuRoteiroCarousel .carousel-control-prev-icon,
+#monteSeuRoteiroCarousel .carousel-control-next-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: 100% 100%;
+}
