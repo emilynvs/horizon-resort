@@ -68,7 +68,7 @@ const beneficios = [
         ],
     },
 ];
-function renderizarPagina() {
+function criarCardsBeneficios() {
     beneficio.innerHTML = "";
     beneficios.forEach((b) => {
         const elemento = document.createElement("div");
@@ -78,10 +78,7 @@ function renderizarPagina() {
               <span class="card-title"><strong>${b.titulo}</strong></span>
 
               <p class="card-text">
-                - ${b.topicos[0]} <br/>
-                - ${b.topicos[1]} <br/>
-                - ${b.topicos[2]} <br/>
-                - ${b.topicos[3]} <br/> 
+                    ${b.topicos.map((t) => `- ${t}`).join("<br/>")}
               </p>
             </div>
           </div>
@@ -89,21 +86,17 @@ function renderizarPagina() {
     `;
         beneficio.appendChild(elemento);
     });
-    criarCarouselMonteRoteiro();
 }
 const carouselContainer = document.getElementById("monteSeuRoteiroCarousel");
 function criarCarouselMonteRoteiro() {
     const carouselContainer = document.getElementById("monteSeuRoteiroCarousel");
     if (!carouselContainer)
         return;
-    // Quantos cards por slide
     const cardsPorSlide = 3;
-    // Dividir o array em grupos de 3
     const grupos = [];
     for (let i = 0; i < conteudoMonteRoteiro.length; i += cardsPorSlide) {
         grupos.push(conteudoMonteRoteiro.slice(i, i + cardsPorSlide));
     }
-    // Gerar o HTML do carousel
     carouselContainer.innerHTML = `
     <div class="carousel-inner">
       ${grupos
@@ -137,6 +130,10 @@ function criarCarouselMonteRoteiro() {
       <span class="visually-hidden">Next</span>
     </button>
   `;
+}
+function renderizarPagina() {
+    criarCardsBeneficios();
+    criarCarouselMonteRoteiro();
 }
 renderizarPagina();
 //# sourceMappingURL=script.js.map
