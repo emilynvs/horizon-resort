@@ -30,6 +30,19 @@ header .navbar-toggler {
   background-color: var(--pale-sky) !important;
 }
 
-section {
-  height: 100vh;
+.card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  overflow: visible;
+}
+
+.cards-horizon {
+  border: var(--true-cobalt) border;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
