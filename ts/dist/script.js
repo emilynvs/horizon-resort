@@ -38,6 +38,7 @@ const conteudoMonteRoteiro = [
         descricao: "Aprenda a preparar pratos típicos da região com chefs especializados e leve suas receitas para casa.",
     },
 ];
+const carouselContainer = document.getElementById("monteSeuRoteiroCarousel");
 const beneficio = document.getElementById("beneficio");
 const beneficios = [
     {
@@ -68,6 +69,72 @@ const beneficios = [
         ],
     },
 ];
+const pacote = document.getElementById("pacotes");
+const listaPacote = [
+    {
+        titulo: "Pacote Essencial Horizon",
+        descricao: "Ideal para quem quer relaxar sem pensar em nada",
+        topicos: [
+            "Suíte de alto padrão",
+            "Café da manhã com vista para o mar",
+            "Tarde livre na piscina com drinks",
+            "Show noturno",
+            "Piscina + spa",
+        ],
+    },
+    {
+        titulo: "Pacote Experiência Premium",
+        descricao: "Para quem busca exclusividade e experiências marcantes",
+        topicos: [
+            "Suíte premium com vista panorâmica",
+            "Café da manhã completo",
+            "Passeio de stand-up paddle ou snorkeling",
+            "Snorkeling com guia especializado",
+            "Almoço temático",
+            "Oficina de culinária",
+            "Show noturno",
+        ],
+    },
+    {
+        titulo: "Pacote Aventura & Natureza",
+        descricao: "Equilíbrio perfeito entre lazer e contato com a natureza",
+        topicos: [
+            "Suíte confortável",
+            "Café da manhã",
+            "Trilha ecológica guiada",
+            "Snorkeling",
+            "Tarde livre na piscina",
+            "Jantar temático",
+            "Esportes aquáticos",
+        ],
+    },
+    {
+        titulo: "Pacote Romance Inesquecível",
+        descricao: "Experiência pensada para conexão e momentos especiais",
+        topicos: [
+            "Suíte com vista para o mar",
+            "Café da manhã na varanda",
+            "Experiência gastronômica exclusiva",
+            "Jantar à luz de velas",
+            "Experiência gastronomica",
+            "Jantar temático",
+            "Spa",
+        ],
+    },
+    {
+        titulo: "Pacote Família Completa",
+        descricao: "Diversão garantida para adultos e crianças",
+        topicos: [
+            "Suíte família",
+            "Café da manhã",
+            "Área kids",
+            "Piscinas",
+            "Experiência gastronomica",
+            "Atividades recreativas durante o dia",
+            "Trilha com a família",
+        ],
+    },
+];
 function criarCardsBeneficios() {
     beneficio.innerHTML = "";
     beneficios.forEach((b) => {
@@ -87,7 +154,6 @@ function criarCardsBeneficios() {
         beneficio.appendChild(elemento);
     });
 }
-const carouselContainer = document.getElementById("monteSeuRoteiroCarousel");
 function criarCarouselMonteRoteiro() {
     const carouselContainer = document.getElementById("monteSeuRoteiroCarousel");
     if (!carouselContainer)
@@ -131,9 +197,27 @@ function criarCarouselMonteRoteiro() {
     </button>
   `;
 }
+function criarPacotes() {
+    const card = listaPacote
+        .map((p) => {
+        return `
+     <div class="card h-100"> 
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${p.titulo}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">${p.descricao}</h6>
+          <p class="card-text">${p.topicos.map((t) => `· ${t}`).join("<br/>")}</p>
+          <button class="btn btn-primary">Escolher esse</button>
+        </div>
+      </div>
+    `;
+    })
+        .join("");
+    pacote.innerHTML = card;
+}
 function renderizarPagina() {
     criarCardsBeneficios();
     criarCarouselMonteRoteiro();
+    criarPacotes();
 }
 renderizarPagina();
 //# sourceMappingURL=script.js.map

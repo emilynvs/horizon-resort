@@ -63,3 +63,17 @@ header .navbar-toggler {
   height: 1.5rem;
   background-size: 100% 100%;
 }
+
+#pacotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+#pacotes .card {
+  width: calc(33.333% - 20px);
+  min-width: 280px;
+  margin-bottom: 10px;
+}
